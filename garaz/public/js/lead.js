@@ -6,3 +6,21 @@ erpnext.LeadController = class LeadController extends frappe.ui.form.Controller 
 		});
 	}
 }
+
+frappe.ui.form.on("Lead Schedule", {
+	quantity: function(frm, cdt, cdn){
+		var row = locals[cdt][cdn];
+		if(row.quantity){
+			row.amount = row.rate * row.quantity;
+			refresh_field("amount", cdn, "lead_schedule");
+		}
+	},
+	rate: function(frm, cdt, cdn){
+		var row = locals[cdt][cdn];
+		if(row.rate){
+			row.amount = row.rate * row.quantity;
+			refresh_field("amount", cdn, "lead_schedule");
+
+		}
+	}
+})

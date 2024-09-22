@@ -4,6 +4,15 @@ import frappe
 import frappe
 from frappe.model.mapper import get_mapped_doc
 
+import frappe
+
+
+def validate(self, method):
+    for row in self.items:
+        if row.qty and row.rate:
+            row.amount = row.qty * row.rate
+
+        
 @frappe.whitelist()
 def create_quotation_from_lead(source_name, target_doc=None):
     def set_missing_values(source, target):
