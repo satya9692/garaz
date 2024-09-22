@@ -1,0 +1,54 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-09-20 19:34:58.301983",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "description",
+  "confirmation_required",
+  "remarks_allowed",
+  "documents_uploading"
+ ],
+ "fields": [
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "in_list_view": 1,
+   "label": "Description"
+  },
+  {
+   "fieldname": "confirmation_required",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Confirmation Required",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "remarks_allowed",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Remarks Allowed",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "documents_uploading",
+   "fieldtype": "Attach",
+   "in_list_view": 1,
+   "label": "Documents Uploading"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-09-20 19:40:24.701055",
+ "modified_by": "Administrator",
+ "module": "Garaz",
+ "name": "Criteria",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

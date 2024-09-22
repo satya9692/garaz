@@ -28,7 +28,9 @@ app_license = "mit"
 # page_js = {"page" : "public/js/file.js"}
 
 # include js in doctype views
-# doctype_js = {"doctype" : "public/js/doctype.js"}
+doctype_js = {
+    "Lead" : "public/js/lead.js"
+    }
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
@@ -122,13 +124,15 @@ app_license = "mit"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-# 	}
-# }
+doc_events = {
+	# "Lead": {
+	# 	"validate": "garaz.garaz.doc_events.lead.validate",
+		
+	# },
+    "Quotation": {
+        "validate": "garaz.garaz.doc_events.quotation.validate"
+    }
+}
 
 # Scheduled Tasks
 # ---------------
@@ -159,9 +163,9 @@ app_license = "mit"
 # Overriding Methods
 # ------------------------------
 #
-# override_whitelisted_methods = {
-# 	"frappe.desk.doctype.event.event.get_events": "garaz.event.get_events"
-# }
+override_whitelisted_methods = {
+	"erpnext.crm.doctype.lead.lead.make_quotation": "garaz.garaz.doc_events.lead.create_quotation_from_lead"
+}
 #
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,
@@ -169,6 +173,11 @@ app_license = "mit"
 # override_doctype_dashboards = {
 # 	"Task": "garaz.task.get_dashboard_data"
 # }
+
+fixtures = [
+    {"dt": "Custom Field", "filters": [["module", "in", "garaz"]]},
+
+]
 
 # exempt linked doctypes from being automatically cancelled
 #
