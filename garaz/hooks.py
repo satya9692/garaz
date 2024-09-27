@@ -125,10 +125,10 @@ doctype_js = {
 # Hook on document methods and events
 
 doc_events = {
-	# "Lead": {
-	# 	"validate": "garaz.garaz.doc_events.lead.validate",
+	"Opportunity": {
+		"validate": "garaz.garaz.doc_events.opportunity.validate",
 		
-	# },
+	},
     "Quotation": {
         "validate": "garaz.garaz.doc_events.quotation.validate"
     }
@@ -164,7 +164,9 @@ doc_events = {
 # ------------------------------
 #
 override_whitelisted_methods = {
-	"erpnext.crm.doctype.lead.lead.make_quotation": "garaz.garaz.doc_events.lead.create_quotation_from_lead"
+	"erpnext.crm.doctype.lead.lead.make_quotation": "garaz.garaz.doc_events.lead.create_quotation_from_lead",
+    "erpnext.crm.doctype.lead.lead.make_opportunity": "garaz.garaz.doc_events.lead.create_opportunity_from_lead"
+
 }
 #
 # each overriding function accepts a `data` argument;
@@ -176,6 +178,7 @@ override_whitelisted_methods = {
 
 fixtures = [
     {"dt": "Custom Field", "filters": [["module", "in", "garaz"]]},
+    {"dt": "Property Setter", "filters": [["module", "in", "garaz"]]}
 
 ]
 
