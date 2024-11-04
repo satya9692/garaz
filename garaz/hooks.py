@@ -29,7 +29,7 @@ app_license = "mit"
 
 # include js in doctype views
 doctype_js = {
-    "Lead" : "public/js/lead.js"
+    "Lead" : "public/js/lead.js",
     }
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
@@ -131,29 +131,22 @@ doc_events = {
 	},
     "Quotation": {
         "validate": "garaz.garaz.doc_events.quotation.validate"
+    },
+    "Employee": {
+        "validate": "garaz.garaz.doc_events.employee.validate"
     }
 }
 
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-# 	"all": [
-# 		"garaz.tasks.all"
-# 	],
-# 	"daily": [
-# 		"garaz.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"garaz.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"garaz.tasks.weekly"
-# 	],
-# 	"monthly": [
-# 		"garaz.tasks.monthly"
-# 	],
-# }
+scheduler_events = {
+	"daily": [
+		"garaz.api.send_bid_start_email",
+        "garaz.api.send_tender_reminder",
+        "garaz.api.send_completion_reminder"
+	],
+}
 
 # Testing
 # -------
