@@ -6,7 +6,9 @@
  "engine": "InnoDB",
  "field_order": [
   "is_active",
-  "basic_salary_calculator_criteria"
+  "basic_salary_calculator_criteria",
+  "matrix_section",
+  "basic_salary_grid"
  ],
  "fields": [
   {
@@ -20,11 +22,21 @@
    "fieldtype": "Table",
    "label": "Basic Salary Calculator Criteria",
    "options": "Basic Salary Calculator Criteria"
+  },
+  {
+   "fieldname": "matrix_section",
+   "fieldtype": "Section Break",
+   "label": "Matrix"
+  },
+  {
+   "fieldname": "basic_salary_grid",
+   "fieldtype": "HTML",
+   "label": "Basic Salary Grid"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-04 21:21:38.227902",
+ "modified": "2024-11-05 19:21:48.844654",
  "modified_by": "Administrator",
  "module": "Garaz",
  "name": "Basic Salary Calculator",
